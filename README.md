@@ -1,2 +1,2 @@
 # PerformanceNet
-Code to appear.
+Code will be anounced a few days before the AAAI conference.
