@@ -1,0 +1,9 @@
+scipy==1.1.0
+numpy==1.14.2
+tqdm==4.28.1
+h5py==2.9.0
+intervaltree==3.0.2
+librosa==0.6.3
+pretty_midi==0.2.8
+scikit_learn==0.20.2
+torch==1.0.1.post2
