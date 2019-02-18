@@ -13,7 +13,7 @@
 
 ### Prepare training data
 
-> We utilizes the [MusicNet](https://homes.cs.washington.edu/~thickstn/start.html) dataset
+> PerformanceNet utilizes the [MusicNet](https://homes.cs.washington.edu/~thickstn/start.html) dataset
 , which provides musical scores and the correspondant performance audio data.
 
 ```sh
@@ -23,6 +23,12 @@
 You can also download the training data manually
 ([musicnet.npz](https://homes.cs.washington.edu/~thickstn/media/musicnet.npz)).
 
+> Pre-process the dataset into pianorolls and spectrogram used for training PerformanceNet.
+
+```sh
+# Pre-process the dataset
+./scripts/process_data.sh
+```
 
 
 # Sound examples
