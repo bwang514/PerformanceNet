@@ -6,4 +6,4 @@ intervaltree==3.0.2
 librosa==0.6.3
 pretty_midi==0.2.8
 scikit_learn==0.20.2
-torch==1.0.1.post2
+pytorch==0.4.0
