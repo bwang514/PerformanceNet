@@ -52,6 +52,5 @@ You can also download the training data manually
 If you use this code in your research, please cite the following paper:
 
 __PerformanceNet: Score-to-Audio Music Generation with Multi-Band Convolutional Residual Network__<br>
-Bryan Wang, Yi-Hsuan Yang
-To Appear in Proceedings of the 33rd AAAI Conference on Artificial Intelligence (AAAI), 2019. [[arxiv](https://arxiv.org/abs/1811.04357)]
+Bryan Wang, Yi-Hsuan Yang. _To Appear in Proceedings of the 33rd AAAI Conference on Artificial Intelligence (AAAI), 2019_. [[arxiv](https://arxiv.org/abs/1811.04357)]
 
