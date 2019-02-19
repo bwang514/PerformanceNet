@@ -44,7 +44,7 @@ You can also download the training data manually
 ```
 ## Scripts
 
-We provide several scripts supporting training model, inference, and synthesizing audio for easy managing the experiments. (so far only training uploaded, will update the remaining very soon.)
+We provide several scripts for easy managing the experiments.
 
 ### Train a new model
 
@@ -56,6 +56,18 @@ We provide several scripts supporting training model, inference, and synthesizin
    ```
 
 2. Modify the configuration and model parameter files for experimental settings.
+
+### Inference (to upload)
+
+Let the model perform the scores in the test dataset to see how good is it!
+
+### Audio Synthesis (to upload)
+
+We use the classic Griffin-Lim algorithm to convert the output spector
+
+### Generate audio from your customized score (to upload)
+
+Our model can perform any solo music given the score (the quality somtimes depends on the key of the song, as some notes may never appear in training data), so we provide a convenient script to convert any .midi file to the input for our model.
 
 ## Sound examples
 
