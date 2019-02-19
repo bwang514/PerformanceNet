@@ -8,7 +8,7 @@
 
 **[Update 2/17]** Data download and pre-processing scripts are uploaded, expect to upload the full model very soon. 
 
-PerformanceNet is a deep convolutional model that learns in an end-to-end manner the score-to-audio mapping between musical scores and the correspondant real audio performance. Our model represents a tiny yet valuable step towards the dream of **The AI performer**.
+PerformanceNet is a deep convolutional model that learns in an end-to-end manner the score-to-audio mapping between musical scores and the correspondant real audio performance. Our work represents a tiny and early-stage towards the dream of **The AI Musician**.
 
 Find more details in our AAAI '19 [paper](https://arxiv.org/abs/1811.04357)!
 
