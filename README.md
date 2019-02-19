@@ -63,11 +63,11 @@ Let the model perform the scores in the test dataset to see how good is it!
 
 ### Audio Synthesis (to be uploaded)
 
-We use the classic Griffin-Lim algorithm to convert the output spectrogram. (__Note:__ it can take a long time for longer audio)
+We use the classic Griffin-Lim algorithm to convert the output spectrogram into audio waveform. (__Note:__ it can take very long time to synthesize a longer audio)
 
 ### Generate audio from your customized score (to be uploaded)
 
-Our model can perform any solo music given the score, so we provide a convenient script to convert any .midi file to the input for our model.The quality somtimes depends on the key of the song, as some notes may never appear in training data. Common keys (C, D, G) should work well. Also it's important to make sure the note range are within the intrument's range.
+Our model can perform any solo music given the score. Therefore we provide a convenient script to convert any .midi file to the input for our model. The quality could vary in different keys, as some notes may never appear in training data. Common keys (C, D, G) should work well though. Also it's important to make sure the note range are within the instrument's range.
 
 ## Sound examples
 
