@@ -50,7 +50,7 @@ We provide several scripts for easy managing the experiments.
 
 1. Run the following command to set up a new experiment.
 
-> The arguments are 1. instrument, 2.training iteration, 3. testing frequency and 4. experiment name, orderly.
+> The arguments are (in order) 1. instrument 2.training iteration 3. testing frequency 4. experiment name.
 
    ```sh
    # Set up a new experiment
