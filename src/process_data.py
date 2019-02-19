@@ -34,8 +34,8 @@ def get_data():
         Process cello, violin, flute 
     
     '''
-    dataset = np.load(open('../data/musicnet.npz','rb'), encoding = 'latin1')
-    train_data = h5py.File('../data/train_data.hdf5', 'w') 
+    dataset = np.load(open('data/musicnet.npz','rb'), encoding = 'latin1')
+    train_data = h5py.File('data/train_data.hdf5', 'w') 
 
     for inst in hp.instrument:
         print ('------ Processing ' + inst + ' ------')
