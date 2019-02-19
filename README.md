@@ -48,7 +48,9 @@ We provide several scripts for easy managing the experiments.
 
 ### Train a new model
 
-1. Run the following command to set up a new experiment with cello, it_train=200, test_freq=10, and experiment name.
+1. Run the following command to set up a new experiment.
+
+> The arguments are instrument, training iteration, testing frequency and experiment name, orderly.
 
    ```sh
    # Set up a new experiment
