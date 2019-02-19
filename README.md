@@ -57,17 +57,17 @@ We provide several scripts for easy managing the experiments.
 
 2. Modify the configuration and model parameter files for experimental settings.
 
-### Inference (to upload)
+### Inference (to be uploaded)
 
 Let the model perform the scores in the test dataset to see how good is it!
 
-### Audio Synthesis (to upload)
+### Audio Synthesis (to be uploaded)
 
-We use the classic Griffin-Lim algorithm to convert the output spector
+We use the classic Griffin-Lim algorithm to convert the output spectrogram. (__Note:__ it can take a long time for longer audio)
 
-### Generate audio from your customized score (to upload)
+### Generate audio from your customized score (to be uploaded)
 
-Our model can perform any solo music given the score (the quality somtimes depends on the key of the song, as some notes may never appear in training data), so we provide a convenient script to convert any .midi file to the input for our model.
+Our model can perform any solo music given the score, so we provide a convenient script to convert any .midi file to the input for our model.The quality somtimes depends on the key of the song, as some notes may never appear in training data. Common keys (C, D, G) should work well. Also it's important to make sure the note range are within the intrument's range.
 
 ## Sound examples
 
