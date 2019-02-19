@@ -4,7 +4,7 @@
 
 ![Model image](https://github.com/bwang514/PerformanceNet/blob/master/model.jpg)
 
-**[Update 2/19]** Training scripts and the PerformanceNet model are uploaded, expect to update the code for inference and sound synthesizing in a few days. 
+**[Update 2/19]** Training scripts and the PerformanceNet model are uploaded, expect to update the code for inference and sound synthesis in very soon. 
 
 **[Update 2/17]** Data download and pre-processing scripts are uploaded, expect to upload the full model very soon. 
 
