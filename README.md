@@ -4,6 +4,8 @@
 
 ![Model image](https://github.com/bwang514/PerformanceNet/blob/master/model.jpg)
 
+**[Update 2/19]** Training scripts and the PerformanceNet model are uploaded, expect to update the code for inference and sound synthesizing in a few days. 
+
 **[Update 2/17]** Data download and pre-processing scripts are uploaded, expect to upload the full model very soon. 
 
 PerformanceNet is a deep convolutional model that learns in an end-to-end manner the score-to-audio mapping between musical scores and the correspondant real audio performance. Our model represents a tiny yet valuable step towards the dream of **The AI performer**.
@@ -40,7 +42,20 @@ You can also download the training data manually
 # Pre-process the dataset
 ./scripts/process_data.sh
 ```
+## Scripts
 
+We provide several scripts supporting training model, inference, and synthesizing audio for easy managing the experiments. (so far only training uploaded, will update the remaining very soon.)
+
+### Train a new model
+
+1. Run the following command to set up a new experiment with cello, it_train=200, test_freq=10, and experiment name.
+
+   ```sh
+   # Set up a new experiment
+   ./scripts/train_model.sh cello 200 10 cello_exp_1
+   ```
+
+2. Modify the configuration and model parameter files for experimental settings.
 
 ## Sound examples
 
