@@ -61,7 +61,7 @@ We provide several scripts for easy managing the experiments.
 
 ### Inference (to be uploaded)
 
-Let the model perform the scores in the test dataset to see how good is it!
+Let the model perform the scores in the test dataset to see how good it is!
 
 ### Audio Synthesis (to be uploaded)
 
