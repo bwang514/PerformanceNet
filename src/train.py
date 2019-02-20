@@ -26,21 +26,28 @@ class hyperparams(object):
         self.best_loss = 1e10 
         self.best_epoch = 0
 
-def Process_Data(instr):
+def Process_Data(instr, exp_dir):
     dataset = h5py.File('data/train_data.hdf5','r')     
     score = dataset['{}_pianoroll'.format(instr)][:]
     spec = dataset['{}_spec'.format(instr)][:]
     onoff = dataset['{}_onoff'.format(instr)][:]
     score = np.concatenate((score, onoff),axis = -1)
     score = np.transpose(score,(0,2,1))
-    print (score.shape)
+
     X_train, X_test, Y_train, Y_test = train_test_split(score, spec, test_size=0.2) 
     
-    train_dataset = utils.TensorDataset(torch.Tensor(X_train, device=cuda), torch.Tensor(Y_train, device=cuda))
-    train_loader = utils.DataLoader(train_dataset,batch_size = 16,shuffle = True)
+    test_data_dir = os.path.join(exp_dir,'test_data')
+    os.makedirs(test_data_dir)
     
+    with open(os.path.join(test_data_dir, "test_X.npy")) as outfile:
+        np.save(outfile, X_test)
+    with open(os.path.join(test_data_dir, "test_Y.npy")) as outfile:
+        np.save(outfile, Y_test)    
+    
+    train_dataset = utils.TensorDataset(torch.Tensor(X_train, device=cuda), torch.Tensor(Y_train, device=cuda))
+    train_loader = utils.DataLoader(train_dataset, batch_size=16, shuffle=True)
     test_dataset = utils.TensorDataset(torch.Tensor(X_test, device=cuda), torch.Tensor(Y_test,device=cuda))
-    test_loader = utils.DataLoader(test_dataset,batch_size = 16,shuffle = True) 
+    test_loader = utils.DataLoader(test_dataset, batch_size=16, shuffle=True) 
     
     return train_loader, test_loader
 
@@ -49,7 +56,7 @@ def train(model, epoch, train_loader, optimizer,iter_train_loss):
     train_loss = 0
     for batch_idx, (data, target) in enumerate(train_loader):        
         optimizer.zero_grad()
-        split = torch.split(data,128,dim = 1)
+        split = torch.split(data, 128, dim=1)
         y_pred = model(split[0].cuda(),split[1].cuda())
         loss_function = nn.MSELoss()
         loss = loss_function(y_pred, target.cuda())
@@ -93,13 +100,12 @@ def main():
     exp_dir = os.path.join(exp_root, hp.exp_name)
     os.makedirs(exp_dir)
 
-   
     model = PerformanceNet().cuda()
     optimizer = optim.Adam(model.parameters(), lr=1e-3)
     model.zero_grad()
     optimizer.zero_grad()
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min')
-    train_loader, test_loader = Process_Data(hp.instrument)
+    train_loader, test_loader = Process_Data(hp.instrument, exp_dir)
     print ('start training')
     for epoch in range(hp.train_epoch):
         loss = train(model, epoch, train_loader, optimizer,hp.iter_train_loss)
@@ -108,12 +114,11 @@ def main():
             test_loss = test(model, epoch, test_loader, scheduler, hp.iter_test_loss)
             hp.test_loss_history.append(test_loss.item())
             if test_loss < hp.best_loss:         
-                torch.save({'epoch': epoch + 1, 'state_dict': model.state_dict(), 'optimizer' : optimizer.state_dict()}, os.path.join(exp_dir, 'BN_checkpoint-{}.tar'.format(str(epoch + 1 ))))
+                torch.save({'epoch': epoch + 1, 'state_dict': model.state_dict(), 'optimizer' : optimizer.state_dict()}, os.path.join(exp_dir, 'checkpoint-{}.tar'.format(str(epoch + 1 ))))
                 hp.best_loss = test_loss.item()    
-                hp.best_epoch = epoch    
-    print (hp.__dict__)
-    with open(os.path.join(exp_dir,'hyperparams.json'), 'w') as outfile:   
-        json.dump(hp.__dict__, outfile)
+                hp.best_epoch = epoch + 1    
+                with open(os.path.join(exp_dir,'hyperparams.json'), 'w') as outfile:   
+                    json.dump(hp.__dict__, outfile)
        
 
 if __name__ == "__main__":
