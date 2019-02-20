@@ -59,7 +59,7 @@ We provide several scripts for easy managing the experiments.
 
 2. Modify the configuration and model parameter files for experimental settings.
 
-### Audio Generation 
+### Inference and generation audio
 
 We use the classic Griffin-Lim algorithm to convert the output spectrogram into audio waveform. (__Note:__ it can take very long time to synthesize a longer audio)
 
@@ -68,7 +68,7 @@ We use the classic Griffin-Lim algorithm to convert the output spectrogram into 
 > The arguments are (in order) 1. experiment directory 2. data resource (TEST_DATA means using the test data split from training dataset.)
 
    ```sh
-   # Default 
+   # Generating 5 * 5 seconds audio by default
    ./scripts/synthesize_audio.sh cello_exp_1 TEST_DATA
    ```
 
@@ -77,7 +77,7 @@ We use the classic Griffin-Lim algorithm to convert the output spectrogram into 
 > Please manually create a director called "midi" in you experiment directory, then put the midi files into it before excuting this script
 
    ```sh
-   # Default 
+   # Generating one audio, length depends on your midi score. 
    ./scripts/synthesize_audio.sh cello_exp_1 YOUR_MIDI_FILE.midi
    ```
 
