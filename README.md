@@ -4,10 +4,6 @@
 
 ![Model image](https://github.com/bwang514/PerformanceNet/blob/master/model.jpg)
 
-**[Update 2/19]** Training scripts and the PerformanceNet model are uploaded, expect to update the code for inference and sound synthesis very soon. 
-
-**[Update 2/17]** Data download and pre-processing scripts are uploaded, expect to upload the full model very soon. 
-
 PerformanceNet is a deep convolutional model that learns in an end-to-end manner the score-to-audio mapping between musical scores and the correspondant real audio performance. Our work represents a humble yet valuable step towards the dream of **The AI Musician**.
 
 Find more details in our AAAI '19 [paper](https://arxiv.org/abs/1811.04357)!
@@ -44,7 +40,9 @@ You can also download the training data manually
 ```
 ## Scripts
 
-We provide several scripts for easy managing the experiments.
+> __Below we assume the working directory is the repository root.__
+
+We provide the scripts for easy managing the experiments.
 
 ### Train a new model
 
@@ -59,25 +57,25 @@ We provide several scripts for easy managing the experiments.
 
 2. Modify the configuration and model parameter files for experimental settings.
 
-### Inference and generation audio
+### Inference and generate audio
 
-We use the classic Griffin-Lim algorithm to convert the output spectrogram into audio waveform. (__Note:__ it can take very long time to synthesize a longer audio)
+We use the Griffin-Lim algorithm to convert the output spectrogram into audio waveform. (__Note:__ it can take very long time to synthesize a longer audio)
 
 1. Synthesizing with test data split from the Musicnet dataset
 
 > The arguments are (in order) 1. experiment directory 2. data resource (TEST_DATA means using the test data split from training dataset.)
 
    ```sh
-   # Generating 5 * 5 seconds audio by default
+   # Generating 5 * 5 seconds audio clip by default
    ./scripts/synthesize_audio.sh cello_exp_1 TEST_DATA
    ```
 
 2. Synthesizing audio from your customized musical scores (midi file):
 
-> Please manually create a director called "midi" in you experiment directory, then put the midi files into it before excuting this script
+> Please manually create a directory called "midi" in you experiment directory, then put the midi files into it before executing this script
 
    ```sh
-   # Generating one audio, length depends on your midi score. 
+   # Generating one audio clip, length depends on your midi score. 
    ./scripts/synthesize_audio.sh cello_exp_1 YOUR_MIDI_FILE.midi
    ```
 
