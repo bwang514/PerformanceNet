@@ -59,17 +59,30 @@ We provide several scripts for easy managing the experiments.
 
 2. Modify the configuration and model parameter files for experimental settings.
 
-### Inference (to be uploaded)
-
-Let the model perform the scores in the test dataset to see how good it is!
-
-### Audio Synthesis (to be uploaded)
+### Audio Generation 
 
 We use the classic Griffin-Lim algorithm to convert the output spectrogram into audio waveform. (__Note:__ it can take very long time to synthesize a longer audio)
 
-### Generate audio from your customized score (to be uploaded)
+1. Synthesizing with test data split from the Musicnet dataset
+
+> The arguments are (in order) 1. experiment directory 2. data resource (TEST_DATA means using the test data split from training dataset.)
+
+   ```sh
+   # Default 
+   ./scripts/synthesize_audio.sh cello_exp_1 TEST_DATA
+   ```
+
+2. Synthesizing audio from your customized musical scores (midi file):
+
+> Please manually create a director called "midi" in you experiment directory, then put the midi files into it before excuting this script
+
+   ```sh
+   # Default 
+   ./scripts/synthesize_audio.sh cello_exp_1 YOUR_MIDI_FILE.midi
+   ```
 
 Our model can perform any solo music given the score. Therefore we provide a convenient script to convert any .midi file to the input for our model. The quality could vary in different keys, as some notes may never appear in training data. Common keys (C, D, G) should work well though. Also it's important to make sure the note range are within the instrument's range.
+
 
 ## Sound examples
 
