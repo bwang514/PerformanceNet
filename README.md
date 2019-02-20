@@ -94,3 +94,13 @@ If you use this code in your research, please cite the following paper:
 __PerformanceNet: Score-to-Audio Music Generation with Multi-Band Convolutional Residual Network__<br>
 Bryan Wang, Yi-Hsuan Yang. _To Appear in Proceedings of the 33rd AAAI Conference on Artificial Intelligence (AAAI), 2019_. [[arxiv](https://arxiv.org/abs/1811.04357)]
 
+
+
+## TODO
+- [x] Upload code for download/pre-processing dataset
+- [x] Upload code for training model
+- [x] Upload code for inference and synthesizing audio
+- [ ] Throughly test the scripts (don't run my code before I've done this xD)
+- [ ] Upload midi sample files
+- [ ] Add comments in code
+
