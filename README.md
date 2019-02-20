@@ -96,7 +96,7 @@ Bryan Wang, Yi-Hsuan Yang. _To Appear in Proceedings of the 33rd AAAI Conference
 
 
 
-## TODO
+### TODO
 - [x] Upload code for download/pre-processing dataset
 - [x] Upload code for training model
 - [x] Upload code for inference and synthesizing audio
