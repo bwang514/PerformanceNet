@@ -3,7 +3,7 @@
 # diretory.
 # Usage: download_data.sh
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" > /dev/null && pwd )"
-DST="${DIR}/../data/musicnet/"
+DST="${DIR}/../data"
 mkdir -p "$DST"
 
 wget -P "$DST" "https://homes.cs.washington.edu/~thickstn/media/musicnet.npz"
