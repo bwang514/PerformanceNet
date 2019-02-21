@@ -4,8 +4,6 @@
 
 ![Model image](https://github.com/bwang514/PerformanceNet/blob/master/model.jpg)
 
-__[Update 2/20]__ The code are re-composed from my original research code for easy understanding, but I haven't had time to test all of them. Some Bugs are expected.
-
 PerformanceNet is a deep convolutional model that learns in an end-to-end manner the score-to-audio mapping between musical scores and the correspondent real audio performance. Our work represents a humble yet valuable step towards the dream of **The AI Musician**. Find more details in our AAAI 2019 [paper](https://arxiv.org/abs/1811.04357)!
 
 
@@ -27,7 +25,7 @@ PerformanceNet is a deep convolutional model that learns in an end-to-end manner
 
 ```sh
 # Download the training data
-sh scripts/download_data.sh
+./scripts/download_data.sh
 ```
 You can also download the training data manually
 ([musicnet.npz](https://homes.cs.washington.edu/~thickstn/media/musicnet.npz)).
@@ -36,7 +34,7 @@ You can also download the training data manually
 
 ```sh
 # Pre-process the dataset
-sh scripts/process_data.sh
+./scripts/process_data.sh
 ```
 ## Scripts
 
@@ -52,7 +50,7 @@ We provide the scripts for easy managing the experiments.
 
    ```sh
    # Set up a new experiment
-   sh scripts/train_model.sh cello 200 10 cello_exp_1
+   ./scripts/train_model.sh cello 200 10 cello_exp_1
    ```
 
 ### Inference and generate audio
@@ -65,7 +63,7 @@ We use the Griffin-Lim algorithm to convert the output spectrogram into audio wa
 
    ```sh
    # Generating 5 * 5 seconds audio clip by default
-   sh scripts/synthesize_audio.sh cello_exp_1 TEST_DATA
+   ./scripts/synthesize_audio.sh cello_exp_1 TEST_DATA
    ```
 
 2. Synthesizing audio from your own midi file:
@@ -74,7 +72,7 @@ We use the Griffin-Lim algorithm to convert the output spectrogram into audio wa
 
    ```sh
    # Generating one audio clip, length depends on your midi score. 
-   sh scripts/synthesize_audio.sh cello_exp_1 YOUR_MIDI_FILE.midi
+   ./scripts/synthesize_audio.sh cello_exp_1 YOUR_MIDI_FILE.midi
    ```
 
 Our model can perform any solo music given the score. Therefore we provide a convenient script to convert any .midi file to the input for our model. The quality could vary in different keys, as some notes may never appear in training data. Common keys (C, D, G) should work well though. Also it's important to make sure the note range is within the instrument's range.
@@ -100,7 +98,7 @@ Bryan Wang, Yi-Hsuan Yang. _To Appear in Proceedings of the 33rd AAAI Conference
 - [x] Upload code for download/pre-processing dataset
 - [x] Upload code for training model
 - [x] Upload code for inference and synthesizing audio
-- [ ] Throughly test the scripts (don't run my code before I've done this xD)
+- [x] Throughly test the scripts (don't run my code before I've done this xD)
 - [ ] Upload midi sample files
 - [ ] Add comments in code
 
