@@ -98,7 +98,7 @@ Bryan Wang, Yi-Hsuan Yang. _To Appear in Proceedings of the 33rd AAAI Conference
 - [x] Upload code for download/pre-processing dataset
 - [x] Upload code for training model
 - [x] Upload code for inference and synthesizing audio
-- [x] Throughly test the scripts (don't run my code before I've done this xD)
+- [x] Test the scripts (don't run my code before I've done this xD)
 - [ ] Upload midi sample files
 - [ ] Add comments in code
 
