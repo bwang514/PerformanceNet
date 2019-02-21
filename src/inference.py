@@ -13,11 +13,10 @@ from tqdm import tqdm
 import sys
 class AudioSynthesizer():
     def __init__(self, checkpoint, exp_dir, data_source):
-        """Todo: process params"""
-        self.checkpoint = torch.load(checkpoint)
+        self.exp_dir = exp_dir
+        self.checkpoint = torch.load(os.path.join(exp_dir,checkpoint))
         self.sample_rate = 44100
         self.wps = 44100//256
-        self.exp_dir = exp_dir
         self.data_source = data_source
                 
     def get_test_midi(self):
@@ -45,7 +44,7 @@ class AudioSynthesizer():
 
 
     def inference(self):
-        model = PerformanceNet()
+        model = PerformanceNet().cuda()
         model.load_state_dict(self.checkpoint['state_dict'])
 
         if self.data_source == 'TEST_DATA':
@@ -58,7 +57,7 @@ class AudioSynthesizer():
 
         with torch.no_grad():
             model.eval()    
-            test_results = model(score.unsqueeze(0),onoff.unsqueeze(0))
+            test_results = model(score, onoff)
             test_results = test_results.cpu().numpy()
  
         output_dir = self.create_output_dir()
@@ -110,7 +109,8 @@ class AudioSynthesizer():
 def main():
     exp_dir = os.path.join(os.path.abspath('./experiments'), sys.argv[1]) # which experiment to test
     data_source = sys.argv[2] # test with testing data or customized data    
-    hp = json.load(os.path.join(exp_dir,'hyperparams.json'))
+    with open(os.path.join(exp_dir,'hyperparams.json'), 'r') as hpfile:
+        hp = json.load(hpfile)
     checkpoints = 'checkpoint-{}.tar'.format(hp['best_epoch'])
     AudioSynth = AudioSynthesizer(checkpoints, exp_dir, data_source) 
     AudioSynth.inference()

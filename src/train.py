@@ -39,10 +39,8 @@ def Process_Data(instr, exp_dir):
     test_data_dir = os.path.join(exp_dir,'test_data')
     os.makedirs(test_data_dir)
     
-    with open(os.path.join(test_data_dir, "test_X.npy")) as outfile:
-        np.save(outfile, X_test)
-    with open(os.path.join(test_data_dir, "test_Y.npy")) as outfile:
-        np.save(outfile, Y_test)    
+    np.save(os.path.join(test_data_dir, "test_X.npy"), X_test)
+    np.save(os.path.join(test_data_dir, "test_Y.npy"), Y_test)    
     
     train_dataset = utils.TensorDataset(torch.Tensor(X_train, device=cuda), torch.Tensor(Y_train, device=cuda))
     train_loader = utils.DataLoader(train_dataset, batch_size=16, shuffle=True)
@@ -100,7 +98,8 @@ def main():
     exp_dir = os.path.join(exp_root, hp.exp_name)
     os.makedirs(exp_dir)
 
-    model = PerformanceNet().cuda()
+    model = PerformanceNet()
+    model.cuda()
     optimizer = optim.Adam(model.parameters(), lr=1e-3)
     model.zero_grad()
     optimizer.zero_grad()
