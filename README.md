@@ -93,12 +93,3 @@ __PerformanceNet: Score-to-Audio Music Generation with Multi-Band Convolutional 
 Bryan Wang, Yi-Hsuan Yang. _To Appear in Proceedings of the 33rd AAAI Conference on Artificial Intelligence (AAAI), 2019_. [[arxiv](https://arxiv.org/abs/1811.04357)]
 
 
-
-### TODO
-- [x] Upload code for download/pre-processing dataset
-- [x] Upload code for training model
-- [x] Upload code for inference and synthesizing audio
-- [x] Test the scripts (don't run my code before I've done this xD)
-- [ ] Upload midi sample files
-- [ ] Add comments in code
-
