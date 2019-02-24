@@ -44,20 +44,20 @@ We provide the scripts for easy managing the experiments.
 
 ### Train a new model
 
-1. Run the following command to set up a new experiment.
+1. Run the following command to set up a new experiment. (~= 300 epoch to obtain good results)
 
 > The arguments are (in order) __1. instrument 2.training epoch 3. testing frequency 4. experiment name.__
 
    ```sh
    # Set up a new experiment
-   ./scripts/train_model.sh cello 200 10 cello_exp_1
+   ./scripts/train_model.sh cello 300 10 cello_exp_1
    ```
 
 ### Inference and generate audio
 
 We use the Griffin-Lim algorithm to convert the output spectrogram into audio waveform. (__Note:__ it can take very long time to synthesize a longer audio)
 
-1. Synthesizing with test data split from the Musicnet dataset (Suggested)
+1. Synthesizing with test data split from the Musicnet dataset (New folder that contains generated audio would be created automatically in your exp directory.)
 
 > The arguments are (in order) 1. experiment directory 2. data resource (TEST_DATA means using the test data split from training dataset.)
 
