@@ -89,9 +89,7 @@ Our model can perform any solo music given the score. Therefore we provide a con
 
 If you use this code in your research, please cite the following papers:
 
-1. __PerformanceNet: Score-to-Audio Music Generation with Multi-Band Convolutional Residual Network__<br>
-Bryan Wang, Yi-Hsuan Yang. _in Proceedings of the 33rd AAAI Conference on Artificial Intelligence __(AAAI)__, 2019_. [[paper](https://wvvw.aaai.org/ojs/index.php/AAAI/article/view/3911)] <br>
-2. __Demonstration of PerformanceNet: A Convolutional Neural Network Model for Score-to-Audio Music Generation__<br>
-Yu-Hua Chen, Bryan Wang, Yi-Hsuan Yang. _in Proceedings of the Twenty-Eighth International Joint Conference on Artificial Intelligence __(IJCAI)__, Demos, 2019_. [[paper](https://www.ijcai.org/proceedings/2019/938)]
+1. __PerformanceNet: Score-to-Audio Music Generation with Multi-Band Convolutional Residual Network.__ Bryan Wang, Yi-Hsuan Yang. _in Proceedings of the 33rd AAAI Conference on Artificial Intelligence __(AAAI)__, 2019_. [[paper](https://wvvw.aaai.org/ojs/index.php/AAAI/article/view/3911)] <br>
+2. __Demonstration of PerformanceNet: A Convolutional Neural Network Model for Score-to-Audio Music Generation.__ Yu-Hua Chen, Bryan Wang, Yi-Hsuan Yang. _in Proceedings of the Twenty-Eighth International Joint Conference on Artificial Intelligence __(IJCAI)__, Demos, 2019_. [[paper](https://www.ijcai.org/proceedings/2019/938)]
 
 
