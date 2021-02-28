@@ -147,7 +147,7 @@ class MBRBlock(nn.Module):
         for i in range(len(bands)):
             t = self.activation(self.bn_list1[i](self.conv_list1[i](bands[i])))
             t = self.bn_list2[i](self.conv_list2[i](t))
-            torch.add(bands[i],1,t)
+            bands[i] = torch.add(bands[i],1,t)
         x = torch.add(x,1,torch.cat(bands, dim = 1))
         return x 
      
